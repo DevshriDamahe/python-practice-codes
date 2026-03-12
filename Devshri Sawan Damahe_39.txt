@@ -1,0 +1,158 @@
+Name : Devshri Sawan Damahe
+Semester : 4
+Roll No. & Section - A -39
+
+Write a program to check whether a number is even or odd.
+a=int(input("Enter a number : "))
+if (a%2==0):
+    print("Input is even")
+else:
+    print("Input is odd")
+
+
+
+Write a program to find the largest of three numbers.
+a=int(input("Enter a : "))
+b=int(input("Enter b : "))
+c=int(input("Enter c : "))
+if (a>b & a>c):
+    print("Input a is largest")
+elif (b>c & b>a):
+    print("Input b is largest")
+elif(c>a & c>b):
+    print("Input c is largest")
+else:
+    print("Incorrect input")
+
+
+3. Check whether a number is positive, negative, or zero.
+
+a=int(input("Enter a number : "))
+if (a>0):
+    print("Input is positive")
+elif(a<0):
+    print("Input is negative")
+else:
+    print("Input is zero")
+
+
+4. Write a program to check whether a number is divisible by both 3 and 5.
+
+a=int(input("Enter a number : "))
+if (a%3==0 and a%5==0):
+    print("Input is divisible by both 3 and 5")
+
+else:
+    print("Not divisible")
+
+
+5. Write a program to print numbers from 1 to N.
+
+N=int(input("Enter a number : "))
+for i in range(1,N+1,1):
+    print(i)
+
+
+6. Write a program to print all even numbers from 1 to N.
+N=int(input("Enter a number : "))
+for i in range(1,N+1,1):
+    if(i%2==0):
+        print(i)
+
+
+7.Write a program to calculate the sum of first N natural numbers.
+N=int(input("Enter a number : "))
+sum=0
+for i in range(1,N+1,1):
+    sum=sum+i
+print(sum)
+
+
+
+8.Write a program to calculate the factorial of a number.
+N=int(input("Enter a number : "))
+sum=0
+for i in range(1,N+1,1):
+    sum=sum+i
+print(sum)
+
+
+
+9. Write a program to print the multiplication table of a number.
+
+N=int(input("Enter a number : "))
+for i in range(1, 11):
+    print(N, "x", i, "=", N*i)
+
+
+
+10. Write a program to count the number of digits in a number.
+
+N=input("Enter a number : ")
+count=0
+for i in N:
+    count=count+1
+print(count)
+
+
+11. Write a program to reverse a number.
+n=int(input("Enter a number-"))
+rev = 0
+while n>0:
+    rem=n%10
+    rev=rev*10+rem
+    n=n//10
+print("Reverse number is -",rev)
+
+
+12. Write a program to check whether a number is palindrome.
+n=int(input("Enter a number - "))   
+rev = 0                            
+temp=n                             
+while n>0:                        
+   rem=n%10                      
+   rev=rev*10+rem               
+   n=n//10                      
+if temp==rev:                    
+    print("Palindrome")         
+else:
+    print("Not Palindrome")
+
+
+13. Write a program to find the sum of digits of a number.
+
+n=int(input("Enter a number : "))
+sum = 0
+while n != 0:
+    d = n % 10
+    sum = sum + d
+    n = n // 10
+print("Sum = ", sum)
+
+
+14. Write a program to check whether a number is an Armstrong number.
+
+n = int(input("Enter number : "))
+sum = 0
+temp = n
+
+while n > 0:
+    rem = n % 10
+    sum = sum + rem**3
+    n = n // 10
+
+if sum == temp:
+    print("Armstrong")
+else:
+    print("Not Armstrong")
+
+
+15. Write a program to print numbers divisible by 7 between 1 and N
+
+
+N=int(input("Enter a number : "))
+for i in range(0,N+1,1):
+    if(i%7==0):
+        print(i, "is divisible by 7")
+   
+ 
