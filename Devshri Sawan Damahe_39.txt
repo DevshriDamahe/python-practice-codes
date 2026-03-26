@@ -154,5 +154,1194 @@ N=int(input("Enter a number : "))
 for i in range(0,N+1,1):
     if(i%7==0):
         print(i, "is divisible by 7")
-   
- 
+
+
+16. Print the sum of series
+
+n=int(input("Enter input 1 : "))
+x=int(input("Enter input 2 : "))
+sum=1
+for i in range(1,n):
+    sum=sum+(x**i)/i;
+print(sum)
+
+17. Print the pattern
+for i in range(1,5):
+    for j in range(1,5):
+        print(i, end = "")
+    print()
+o/p
+1111
+2222
+3333
+4444
+
+
+for i in range(1,5):
+    for j in range(1,5):
+        print(j, end = "")
+    print()
+o/p
+1234
+1234
+1234
+1234
+
+
+
+
+n=1
+for i in range(1,5):
+    for j in range(1,5):
+        print(n, end = "  ") # print(n, end = "\t ")
+        n=n+1
+    print()
+        
+1  2  3  4  
+5  6  7  8  
+9  10  11  12  
+13  14  15  16  
+
+
+18. 
+n=65
+for i in range(1,5):
+    for j in range(1,5):
+        print(chr(n), end = "\t ")
+        n=n+1
+    print()
+A	 B	 C	 D	 
+E	 F	 G	 H	 
+I	 J	 K	 L	 
+M	 N	 O	 P
+
+
+
+
+
+n=1
+for i in range(1,5):
+    for j in range(1,i+1):
+        print(i, end = "\t ")
+       
+    print()
+
+o/p
+1	 
+2	 2	 
+3	 3	 3	 
+4	 4	 4	 4
+
+
+
+
+
+
+n=1
+for i in range(1,5):
+    for j in range(1,i+1):
+        print("*", end = "\t ")
+       
+    print()
+        
+*	 
+*	 *	 
+*	 *	 *	 
+*	 *	 *	 *
+
+
+n=1
+for i in range(4,0,-1):
+    for j in range(1,i+1):
+        print("*", end = "\t ")
+       
+    print()
+*	 *	 *	 *	 
+*	 *	 *	 
+*	 *	 
+*
+
+
+19. Fizz Buzz
+Easy
+Topics
+premium lock icon
+Companies
+Given an integer n, return a string array answer (1-indexed) where:
+
+answer[i] == "FizzBuzz" if i is divisible by 3 and 5.
+answer[i] == "Fizz" if i is divisible by 3.
+answer[i] == "Buzz" if i is divisible by 5.
+answer[i] == i (as a string) if none of the above conditions are true.
+
+
+class Solution(object):
+    def fizzBuzz(self, n):
+        """
+        :type n: int
+        :rtype: List[str]
+        """
+        answer=[]
+        
+        for i in range(1,n+1):
+            if i%3==0 and i%5==0:
+                answer.append("FizzBuzz")
+            elif i%3==0:
+                answer.append("Fizz")
+            elif i%5==0:
+                answer.append("Buzz")
+            else: 
+                answer.append(str(i))
+        return answer
+
+
+(LEETCODE) 1480. Running Sum of 1d Array
+class Solution(object):
+    def runningSum(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: List[int]
+        """
+        sum=0
+        runningSum=[]
+        for i in nums:
+            sum=sum+i
+            runningSum.append(sum)
+        return runningSum
+
+
+
+
+11series.py
+n=int(input("enter n:"))
+x=int(input("enter x:"))
+sum=1
+for i in range(1,n):
+    sum=sum+(x**i)/i;
+print(sum)
+
+
+
+1sr.py
+def add(x,y):
+    res=x+y
+    res1=x+y
+    res2=x+y
+    res4=x+y
+   return res,res1,res2,res4
+
+    if __name__  == '__main__':
+         a=int(input(""))
+         b=int(input(""))
+    res,res1,res2,res4=add(a,b)
+print(res,res1,res2,res4)
+
+
+
+
+DAY-6
+def compareTriplets(a, b):
+    alice=0
+    bob=0
+    a=[]
+    while len(a)!=0:
+            if a[i]>b[j]:
+                alice+=1
+            elif a[i]<b[j]:
+                bob+=1
+            else a[i]==b[j]:
+                pass
+            i+=1
+            j+=1
+    return (alice,bob)
+
+#2. sum big
+def compareTriplets(a, b):
+    alice=0
+    bob=0
+    for i in range(len(a)):
+        if a[i]>b[i]:
+            alice+=1
+        elif a[i]<b[i]:
+            bob+=1
+        else:
+            pass
+    return alice,bob
+
+#3. sum of diagonal of matrix
+def diagonalDifference(arr):
+    sum1=0
+    for i in range(len(arr)):
+        sum1+=arr[i][i]
+    x=0
+    b=len(arr[0])
+    for i in range(len(arr)):
+        x+=arr[i][b-1]
+        b-=1
+    return abs(sum1-x)
+
+#4. plus minus
+def plusMinus(arr):
+    sum1=0
+    diff=0
+    zero=0
+    for i in range(len(arr)):
+        if arr[i]>0:
+            sum1+=1
+        elif arr[i]<0:
+            diff+=1
+        else:
+            zero+=1
+    print(sum1/(len(arr)))
+    print(diff/(len(arr)))
+    print(zero/(len(arr)))
+
+#5. Shifiting array by n steps
+n = int(input("Enter the number of Elements: "))
+arr = []
+for i in range(n):
+    a = int(input("Enter the number: "))
+    arr.append(a)
+b = int(input("Enter the number of steps: "))
+for _ in range(b):
+    last_element = arr[n-1]
+    for i in range(n-1, 0, -1):
+        arr[i] = arr[i-1]
+    arr[0] = last_element
+for i in range(n):
+    print(arr[i])
+
+
+
+
+DAY 7
+https://www.hackerearth.com/practice/basic-programming/input-output/basics-of-input-output/practice-problems/algorithm/roy-and-profile-picture/
+When any photo is uploaded following events may occur:
+
+[1] If any of the width or height is less than L, user is prompted to upload another one. Print "UPLOAD ANOTHER" in this case.
+[2] If width and height, both are large enough and
+(a) if the photo is already square then it is accepted. Print "ACCEPTED" in this case.
+(b) else user is prompted to crop it. Print "CROP IT" in this case.
+
+ANSWER==
+L = int(input())
+N = int(input())
+
+for _ in range(N):
+    W, H = map(int, input().split())
+    
+    if W < L or H < L:
+        print("UPLOAD ANOTHER")
+    elif W == H:
+        print("ACCEPTED")
+    else:
+        print("CROP IT")
+
+___________________________________________________________________________________________________________________________________________________________________
+https://www.hackerearth.com/problem/algorithm/monk-and-rotation-3-bcf1aefe/
+question:
+Input:
+The first line will consists of one integer T denoting the number of test cases.
+For each test case:
+1) The first line consists of two integers N and K, N being the number of elements in the array and K denotes the number of steps of rotation.
+2) The next line consists of N space separated integers , denoting the elements of the array A.
+
+Output:
+t = int(input())
+
+for i in range(t):
+    n, k = map(int, input().split())
+    arr = list(map(int, input().split()))
+    
+    k = k % n  
+    
+    result = arr[-k:] + arr[:-k]
+    
+    print(*result)
+_________________________________________________________________________________________________________________________________________________________
+You have been given a String S consisting of uppercase and lowercase English alphabets. You need to change the case of each alphabet in this String. That is, all the uppercase letters should be converted to lowercase and all the lowercase letters should be converted to uppercase. You need to then print the resultant String to output.
+
+Input Format
+The first and only line of input contains the String S
+
+Output Format
+Print the resultant String on a single line.
+
+Constraints
+ where S denotes the length of string S.
+
+Sample Input
+abcdE
+Sample Output
+ABCDe
+
+Print the required array.
+
+output
+s = input()
+
+result = ""
+
+for ch in s:
+    if 'a' <= ch <= 'z':
+        result += chr(ord(ch) - 32)   # convert to uppercase
+    elif 'A' <= ch <= 'Z':
+        result += chr(ord(ch) + 32)   # convert to lowercase
+
+print(result)
+
+ouestion:
+majorinty elemenjt
+arr = list(map(int, input().split()))
+n = len(arr) // 2
+
+for i in arr:
+    if arr.count(i) > n:
+        print("Majority number:", i)
+        break
+else:
+    print("No majority element")
+
+## array
+arr = list(map(int, input().split()))
+n = len(arr)
+result = [1] * n
+
+left = 1
+for i in range(n):
+    result[i] = left
+    left *= arr[i]
+
+right = 1
+for i in range(n - 1, -1, -1):
+    result[i] *= right
+    right *= arr[i]
+
+print(result)
+
+
+DAY 8
+1ST:Two Sum
+https://leetcode.com/problems/two-sum/description/
+CODE:
+      class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        d = {}
+        
+        for i in range(len(nums)):
+            diff = target - nums[i]
+            
+            if diff in d:
+                return [d[diff], i]
+            
+            d[nums[i]] = i
+_________________________________________________________________________________________________________________________________________________________________
+2nd: Fizz Buzz
+https://leetcode.com/problems/fizz-buzz/description/
+code: 
+     class Solution:
+    def fizzBuzz(self, n: int) -> List[str]:
+        answer = []
+        for i in range(1, n + 1):
+            if i % 15 == 0:
+                answer.append("FizzBuzz")
+            elif i % 3 == 0:
+                answer.append("Fizz")
+            elif i % 5 == 0:
+                answer.append("Buzz")
+            else:
+                answer.append(str(i))
+        return answer
+________________________________________________________________________________________________________________________________________________________
+3rd: Running Sum of 1d Array
+https://leetcode.com/problems/running-sum-of-1d-array/description/
+code:
+     class Solution:
+    def runningSum(self, nums):
+        for i in range(1, len(nums)):
+            nums[i] = nums[i] + nums[i-1]
+        return nums
+        __________________________________________________________________________________________________________________________________________________
+4th:implement a stack push pop peek and disaplay code in python
+code:
+     class Stack:
+    def __init__(self):
+        # Initialize an empty list to store stack elements
+        self.stack = []
+
+    def is_empty(self):
+        # Check if the stack is empty
+        return len(self.stack) == 0
+
+    def push(self, element):
+        # Add an element to the top of the stack
+        self.stack.append(element)
+        print(f"Pushed item: {element}")
+
+    def pop(self):
+        # Remove and return the top element from the stack
+        if self.is_empty():
+            return "Stack is empty (Underflow)"
+        return self.stack.pop()
+
+    def peek(self):
+        # View the top element without removing it
+        if self.is_empty():
+            return "Stack is empty"
+        return self.stack[-1]
+
+    def display(self):
+        # Print all elements in the stack
+        if self.is_empty():
+            print("Stack is empty")
+        else:
+            print("Stack contents:", self.stack)
+
+# Example Usage
+if __name__ == "__main__":
+    my_stack = Stack()
+
+    print("--- Stack Operations Demonstration ---")
+    my_stack.push(10)
+    my_stack.push(20)
+    my_stack.push(30)
+    my_stack.display()
+
+    print(f"\nPeek: {my_stack.peek()}")
+
+    popped_item = my_stack.pop()
+    print(f"Popped item: {popped_item}")
+    my_stack.display()
+
+    my_stack.pop()
+    my_stack.pop()
+    popped_item_empty = my_stack.pop() # Attempting to pop from an empty stack
+    print(f"Attempted pop on empty stack: {popped_item_empty}")
+    my_stack.display()
+__________________________________________________________________________________________________________________________________________________________
+5th:print next larger elemenet input n=4 ,array=[1 3 2 4] in python
+  code:
+       def find_next_larger_elements(arr):
+    n = len(arr)
+    result = [-1] * n
+    stack = []
+
+    for i in range(n - 1, -1, -1):
+        while stack and stack[-1] <= arr[i]:
+            stack.pop()
+        if stack:
+            result[i] = stack[-1]
+        stack.append(arr[i])
+
+    return result
+
+n = 4
+array = [1, 3, 2, 4]
+output = find_next_larger_elements(array)
+print(*output)
+
+n = 4
+array = [1, 3, 2, 4]
+output = find_next_larger_elements(array)
+print(output)
+
+
+
+1ST:Two Sum
+https://leetcode.com/problems/two-sum/description/
+CODE:
+      class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        d = {}
+        
+        for i in range(len(nums)):
+            diff = target - nums[i]
+            
+            if diff in d:
+                return [d[diff], i]
+            
+            d[nums[i]] = i
+_________________________________________________________________________________________________________________________________________________________________
+2nd: Fizz Buzz
+https://leetcode.com/problems/fizz-buzz/description/
+code: 
+     class Solution:
+    def fizzBuzz(self, n: int) -> List[str]:
+        answer = []
+        for i in range(1, n + 1):
+            if i % 15 == 0:
+                answer.append("FizzBuzz")
+            elif i % 3 == 0:
+                answer.append("Fizz")
+            elif i % 5 == 0:
+                answer.append("Buzz")
+            else:
+                answer.append(str(i))
+        return answer
+________________________________________________________________________________________________________________________________________________________
+3rd: Running Sum of 1d Array
+https://leetcode.com/problems/running-sum-of-1d-array/description/
+code:
+     class Solution:
+    def runningSum(self, nums):
+        for i in range(1, len(nums)):
+            nums[i] = nums[i] + nums[i-1]
+        return nums
+        __________________________________________________________________________________________________________________________________________________
+4th:implement a stack push pop peek and disaplay code in python
+code:
+     class Stack:
+    def __init__(self):
+        # Initialize an empty list to store stack elements
+        self.stack = []
+
+    def is_empty(self):
+        # Check if the stack is empty
+        return len(self.stack) == 0
+
+    def push(self, element):
+        # Add an element to the top of the stack
+        self.stack.append(element)
+        print(f"Pushed item: {element}")
+
+    def pop(self):
+        # Remove and return the top element from the stack
+        if self.is_empty():
+            return "Stack is empty (Underflow)"
+        return self.stack.pop()
+
+    def peek(self):
+        # View the top element without removing it
+        if self.is_empty():
+            return "Stack is empty"
+        return self.stack[-1]
+
+    def display(self):
+        # Print all elements in the stack
+        if self.is_empty():
+            print("Stack is empty")
+        else:
+            print("Stack contents:", self.stack)
+
+# Example Usage
+if __name__ == "__main__":
+    my_stack = Stack()
+
+    print("--- Stack Operations Demonstration ---")
+    my_stack.push(10)
+    my_stack.push(20)
+    my_stack.push(30)
+    my_stack.display()
+
+    print(f"\nPeek: {my_stack.peek()}")
+
+    popped_item = my_stack.pop()
+    print(f"Popped item: {popped_item}")
+    my_stack.display()
+
+    my_stack.pop()
+    my_stack.pop()
+    popped_item_empty = my_stack.pop() # Attempting to pop from an empty stack
+    print(f"Attempted pop on empty stack: {popped_item_empty}")
+    my_stack.display()
+__________________________________________________________________________________________________________________________________________________________
+DAY 9
+
+5th:print next larger elemenet input n=4 ,array=[1 3 2 4] in python
+  code:
+       def find_next_larger_elements(arr):
+    n = len(arr)
+    result = [-1] * n
+    stack = []
+
+    for i in range(n - 1, -1, -1):
+        while stack and stack[-1] <= arr[i]:
+            stack.pop()
+        if stack:
+            result[i] = stack[-1]
+        stack.append(arr[i])
+
+    return result
+
+n = 4
+array = [1, 3, 2, 4]
+output = find_next_larger_elements(array)
+print(*output)
+
+n = 4
+array = [1, 3, 2, 4]
+output = find_next_larger_elements(array)
+print(output)
+
+__________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+CODING TRAINING
+0-Day CDPC Training Session by Ashish Gadpayle Sir (March 9 to March 18, 2026)
+This file tracks my daily coding practice and problem-solving journey during the CDPC training program.
+
+Goals
+Practice Python basics (input/output, loops, conditionals).
+Solve logic problems (arrays, strings, math).
+Learn algorithms (sliding window, prefix sum).
+Build consistency with daily coding.
+Strengthen understanding of time and space complexity.
+Transition into Python Intermediate Level (functions, modules).
+Daily Log
+Day 1 (March 9, 2026)
+Learned basics of Python (input/output, conditionals, loops).
+Studied time and space complexity from efficient (O(1), O(log n)) to less efficient (O(n²), O(2^n)).
+Next: Practice loops with printing sequences.
+Day 2 (March 10, 2026)
+Solved basic Python problems:
+Addition
+Reversing a number
+Armstrong number check
+Total digit count
+Peterson number
+Learned: modulus operator, digit manipulation.
+Next: Palindrome and more number theory problems.
+Day 3 (March 11, 2026)
+Practiced patterns:
+Number pyramids
+Star patterns
+Learned: nested loops, formatting output.
+Next: Arrays and string manipulation.
+Day 4 (March 12, 2026)
+Solved HackerRank problems.
+Learned: Python lists (creation, indexing, slicing).
+Next: Explore list methods and start with string problems.
+Day 5 (March 13, 2026)
+Solved algorithm-based problems:
+Simple Array Sum
+Find Minimum and Maximum in Array
+Remove Duplicates from Unsorted Array
+Pattern Printing with Skip (using continue)
+Alternate Negative and Positive Arrangement
+Learned:
+continue and break statements
+Taking multiple inputs at once using map, split, eval
+Next: Prefix sum problems and sliding window techniques.
+Progress Summary
+Total problems solved: 30+
+Strong in: conditionals, loops, number problems, basic arrays
+Transitioning to: intermediate Python (functions)
+
+______________________________________________________________________________________________________________________________________________________________________
+
+
+Big O Notation
+
+**Big O Notation** is used to measure the efficiency of an algorithm as the input size increases.
+
+It describes how the running time or memory usage grows.
+
+Example:
+
+| Input Size | Runtime     |
+| ---------- | ----------- |
+| 10         | Fast        |
+| 1000       | Slower      |
+| 1,000,000  | Much slower |
+
+---
+
+# 4. Time and Space Complexity
+
+## Time Complexity
+
+Measures how long an algorithm takes to run.
+
+Example:
+Program A = 30 seconds
+Program B = 60 seconds
+
+Program A is more efficient.
+
+## Space Complexity
+
+Measures how much memory an algorithm uses.
+
+---
+
+# 5. Performance Cases
+
+Algorithms are analyzed in three cases.
+
+### Best Case
+
+Minimum time required.
+
+### Average Case
+
+Normal expected performance.
+
+### Worst Case
+
+Maximum time required.
+
+---
+
+# 6. Types of Complexity Notations
+
+## Big O (O)
+
+Represents the **upper bound (worst case)**.
+
+Example:
+O(n)
+
+## Big Omega (Ω)
+
+Represents the **lower bound (best case)**.
+
+Example:
+Ω(1)
+
+## Big Theta (Θ)
+
+Represents the **exact or average bound**.
+
+Example:
+Θ(n)
+
+---
+
+# 7. Rules for Measuring Complexity
+
+Rule 1
+Assignment statements and simple conditions have complexity:
+
+O(1)
+
+Rule 2
+A single loop running from 0 to n:
+
+O(n)
+
+Example:
+
+```python
+for i in range(n):
+    print(i)
+```
+
+Rule 3
+Nested loops result in quadratic complexity.
+
+O(n²)
+
+Example:
+
+```python
+for i in range(n):
+    for j in range(n):
+        print(i, j)
+```
+
+Rule 4
+When a loop divides the variable by 2 each iteration, the complexity becomes logarithmic.
+
+O(log n)
+
+Example:
+
+```python
+n = 16
+
+while n > 1:
+    print(n)
+    n = n // 2
+```
+
+Rule 5
+If multiple statements exist, add their complexities.
+
+Example:
+
+```
+O(n) + O(n²) = O(n²)
+```
+
+We keep the dominant term.
+
+---
+
+# 8. Python Example – Reverse a Number
+
+### Method 1 (Fixed 3-Digit Logic)
+
+```python
+no = int(input("Enter any value: "))
+
+n1 = no % 10
+no = no // 10
+
+n2 = no % 10
+n3 = no // 10
+
+rev = n1 * 100 + n2 * 10 + n3
+print(rev)
+```
+
+---
+
+### Method 2 (General Algorithm – Recommended)
+
+Works for numbers of any length.
+
+```python
+no = int(input("Enter number: "))
+rev = 0
+
+while no > 0:
+    digit = no % 10
+    rev = rev * 10 + digit
+    no = no // 10
+
+print(rev)
+```
+
+Time Complexity:
+
+O(n)
+
+where **n = number of digits**
+
+---
+
+# 9. Example of Logarithmic Complexity
+
+```python
+n = 16
+
+while n > 1:
+    print(n)
+    n = n // 2
+```
+
+Output:
+
+```
+16
+8
+4
+2
+1
+```
+
+Each step reduces the problem size by half, so the time complexity is:
+
+O(log n)
+
+---
+
+# Conclusion
+
+Algorithms define the steps to solve a problem, while data structures organize the data used by those algorithms.
+Big O notation helps measure the efficiency of algorithms, ensuring programs remain efficient as input sizes grow.
+
+_____________________________________________________________________________________________________________________________________________________________________
+
+#reverse string
+name = input("Enter your name: ")
+rev = ""
+
+for ch in name:
+    rev = ch + rev
+
+print("Reverse name:", rev)
+
+
+_____________________________________________________________________________________________________________________________________________________________________
+
+# Python Practice Programs (Formatted Version)
+
+---
+
+## Q1. Say "Hello, World!" With Python
+
+```python
+print("Hello, World!")
+```
+
+---
+
+## Q2. Python If-Else (Version 1)
+
+```python
+#!/bin/python3
+import math
+import os
+import random
+import re
+import sys
+
+if __name__ == '__main__':
+    n = int(input().strip())
+
+    if n % 2 != 0:
+        print("Weird")
+
+    elif n > 2 and n <= 5:
+        print("Not Weird")
+
+    elif n > 6 and n <= 20:
+        print("Weird")
+
+    elif n > 20:
+        print("Not Weird")
+```
+
+---
+
+## Q2. Python If-Else (Version 2)
+
+```python
+n = int(input())
+
+if n % 2 != 0:
+    print("Weird")
+
+elif n >= 2 and n <= 5:
+    print("Not Weird")
+
+elif n >= 6 and n <= 20:
+    print("Weird")
+
+else:
+    print("Not Weird")
+```
+
+---
+
+## Q3. Arithmetic Operators
+
+```python
+if __name__ == '__main__':
+    a = int(input())
+    b = int(input())
+
+    print(a + b)
+    print(a - b)
+    print(a * b)
+```
+
+---
+
+## Q4. Python: Division
+
+```python
+if __name__ == '__main__':
+    a = int(input())
+    b = int(input())
+
+    print(a // b)
+    print(a / b)
+```
+
+---
+
+## Q5. Loops
+
+```python
+if __name__ == '__main__':
+    n = int(input())
+
+    a = 0
+    while n > 0:
+        print(a ** 2)
+        a += 1
+        n -= 1
+
+
+_____________________________________________________________________________________________________________________________________________________________________
+
+# HackerRank & Python Practice Programs (Formatted Version)
+
+---
+
+## 1. Solve Me First
+
+https://www.hackerrank.com/challenges/solve-me-first/problem
+
+```python
+# Solve me first
+
+def solveMeFirst(a, b):
+    # Hint: Type return a+b below
+    return a + b
+
+num1 = int(input())
+num2 = int(input())
+
+res = solveMeFirst(num1, num2)
+print(res)
+```
+
+**Output**
+
+```
+2
+3
+Expected Output
+5
+```
+
+---
+
+## 2. Simple Array Sum
+
+https://www.hackerrank.com/challenges/simple-array-sum/problem
+
+```python
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+# Complete the 'simpleArraySum' function below.
+# The function is expected to return an INTEGER.
+# The function accepts INTEGER_ARRAY ar as parameter.
+
+def simpleArraySum(ar):
+    # Write your code here
+    return sum(ar)
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    ar_count = int(input().strip())
+    ar = list(map(int, input().rstrip().split()))
+
+    result = simpleArraySum(ar)
+
+    fptr.write(str(result) + '\n')
+    fptr.close()
+```
+
+---
+
+## Function for Finding Maximum and Minimum
+
+```python
+def maxmin(ar):
+    b = 0
+    c = ar[1]
+
+    for i in ar:
+        if i > b:
+            b = i
+        if i < c:
+            c = i
+
+    print("largest ", b)
+    print("smallest ", c)
+
+n = int(input("Enter range: "))
+ar = []
+
+for i in range(0, n):
+    b = int(input("Enter digit: "))
+    ar.append(b)
+
+maxmin(ar)
+```
+
+---
+
+## Types of Taking Input
+
+```python
+1. n = int(input(""))
+2. a = int(input(""))
+   b = int(input(""))
+3. a, b = map(int(input("").split())
+4. ls = list(map(int(input("").split()))
+5. arr = eval(input())
+```
+
+---
+
+## Remove Duplicate
+
+```python
+def remove(ar):
+    ls = []
+    for i in ar:
+        if i not in ls:
+            ls.append(i)
+    return(ls)
+
+n = int(input("Enter range: "))
+ar = []
+
+for i in range(0, n):
+    b = int(input("Enter digit: "))
+    ar.append(b)
+
+print(remove(ar))
+```
+
+---
+
+## Pattern
+
+```python
+i = 1
+j = 10
+
+while i < j:
+    if i == 3 and j == 8:
+        i = i + 1
+        j = j - 1
+        continue
+
+    print(i, "\t", j)
+    i = i + 1
+    j = j - 1
+```
+
+**Output**
+
+```
+1     10
+2     9
+4     7
+5     6
+```
+
+---
+
+## Alternating Positive and Negative Numbers in an Array
+
+```python
+arr = [1, -2, 3, -4, -1, 4]
+
+pos = []
+neg = []
+
+# separate positive and negative numbers
+for i in arr:
+    if i >= 0:
+        pos.append(i)
+    else:
+        neg.append(i)
+
+result = []
+i = j = 0
+
+# arrange alternately
+while i < len(pos) and j < len(neg):
+    result.append(pos[i])
+    result.append(neg[j])
+    i += 1
+    j += 1
+
+# # add remaining elements
+# result.extend(pos[i:])
+# result.extend(neg[j:])
+
+# print(result)
